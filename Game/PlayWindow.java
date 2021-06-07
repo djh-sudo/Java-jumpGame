@@ -307,7 +307,7 @@ public class PlayWindow extends JPanel implements ActionListener{
 		int xmax = (yLeft-ymax) + xLeft;
 		int Ypoly = (int) (yLeft - ratio*(yLeft-ymax));
 		int Xpoly = (int) (xLeft + ratio*(xmax-xLeft));
-		generator.setParameter(xLeftTemp,yLeft,Xpoly,Ypoly);
+		generator.setParameter(xLeftTemp+leftWidth/2,yLeft,Xpoly,Ypoly);
 
 	}
 	long getScore() {

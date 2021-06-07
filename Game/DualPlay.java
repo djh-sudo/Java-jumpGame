@@ -128,6 +128,7 @@ public class DualPlay extends JPanel implements ActionListener{
 				Component RP = getRightPanel();
 				if(RP != null) {
 					((PlayWindow)RP).setGameOver();
+					TimeUse.stop();
 					return true;
 				}
 			}
@@ -142,6 +143,7 @@ public class DualPlay extends JPanel implements ActionListener{
 				Component LP = getLeftPanel();
 				if(LP != null) {
 					((PlayWindow)LP).setGameOver();
+					TimeUse.stop();
 					return true;
 				}
 			}

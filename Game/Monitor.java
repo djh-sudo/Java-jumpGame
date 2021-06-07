@@ -27,7 +27,6 @@ public class Monitor implements ActionListener,KeyListener{
 	private long rightTimeInterval = 0;
 
 
-
 	public void setLeftKey(int leftKey) {
 		this.LeftKey = leftKey;
 	}

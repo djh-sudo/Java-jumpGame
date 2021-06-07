@@ -10,7 +10,6 @@ public class PillarGenerator {
 	private double muWidth, sigmaWidth;
 	private double muHeight, sigmaHeight;
 	private double muDist, sigmaDist;
-
 	public PillarGenerator(int Difficulty) {
 		this.Difficulty = Difficulty;
 		muWidth = 150; sigmaWidth = 40;
@@ -38,10 +37,11 @@ public class PillarGenerator {
 		int tmpHeight, tmpWidth, tmpd;
 		Random random = new Random();
 		Pillar[] resultPillars = new Pillar[PillarNumber];
-		for (int i=0; i<PillarNumber; i++) {
+		for (int i = 0; i < PillarNumber; i++) {
 			tmpHeight = (int)Math.floor(GaussianRandom(muHeight, sigmaHeight));
 			tmpWidth = (int)Math.floor(GaussianRandom(muWidth, sigmaWidth));
 			tmpd = (int)Math.floor(GaussianRandom(muDist, sigmaDist));
+			
 			resultPillars[i] = new Pillar(tmpHeight, tmpWidth, tmpd);
 			muHeight = tmpHeight*(random.nextBoolean()==true?0.9:1.1); sigmaHeight *= 1.2;
 			muWidth *= 0.95; 

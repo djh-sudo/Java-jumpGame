@@ -422,11 +422,11 @@ public class SinglePlay extends JPanel implements ActionListener{
 	public void setTimeInterval(long timerInterval) {
 		this.timeInterval = timerInterval;
 		double ratio = timeInterval>=1500?1:timeInterval/1500.0;
-		int ymax = 0;
+		int ymax = -10;
 		int xmax = (yLeft-ymax) + xLeft;
 		int Ypoly = (int) (yLeft - ratio*(yLeft-ymax));
 		int Xpoly = (int) (xLeft + ratio*(xmax-xLeft));
-		generator.setParameter(xLeftTemp,yLeft,Xpoly,Ypoly);
+		generator.setParameter(xLeftTemp+leftWidth/2,yLeft,Xpoly,Ypoly);
 
 	}
 	void checkGame() {
