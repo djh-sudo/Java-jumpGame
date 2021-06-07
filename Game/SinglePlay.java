@@ -2,7 +2,6 @@ import java.awt.BasicStroke;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Image;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -32,7 +31,7 @@ public class SinglePlay extends JPanel implements ActionListener{
 	Timer timerPeople = new Timer(timerPeopleCount,this);
 	Timer timeCount = new Timer(1000,this);
 	int totalTime = 500;
-	int toalFlashTime = 500;
+	int toalFlashTime = 600;
 
 	boolean Start = false;
 	boolean peopleJumpOver = false;
@@ -47,7 +46,7 @@ public class SinglePlay extends JPanel implements ActionListener{
 	long  useTime = 0;
 	long score = 0;
 	boolean outImageIsSet = false;
-	static final int WINDOW_HEIGHT = 713;
+	static final int WINDOW_HEIGHT = 720;
 	static final int WINDOW_WIDTH = 1014;
 	int xInLand;
 	PolyGenerator generator = new PolyGenerator(0,0,0,0);
@@ -252,7 +251,7 @@ public class SinglePlay extends JPanel implements ActionListener{
 			return;
 		}
 		if(gameFail) {
-			failIcon.paintIcon(this, g2d, 200, 100);
+			failIcon.paintIcon(this, g2d, 250, 100);
 			g2d.dispose();
 			return;
 		}
@@ -314,7 +313,7 @@ public class SinglePlay extends JPanel implements ActionListener{
 			xRight -= delta;
 			xLeft -= delta;
 			xout -= delta;
-			repaint(10,10,1014,713);
+			repaint(10,10,1014,720);
 
 
 			if(xLeftTemp>=xRight) {
@@ -422,7 +421,7 @@ public class SinglePlay extends JPanel implements ActionListener{
 	public void setTimeInterval(long timerInterval) {
 		this.timeInterval = timerInterval;
 		double ratio = timeInterval>=1500?1:timeInterval/1500.0;
-		int ymax = -10;
+		int ymax = -30;
 		int xmax = (yLeft-ymax) + xLeft;
 		int Ypoly = (int) (yLeft - ratio*(yLeft-ymax));
 		int Xpoly = (int) (xLeft + ratio*(xmax-xLeft));

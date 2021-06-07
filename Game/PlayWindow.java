@@ -20,7 +20,7 @@ public class PlayWindow extends JPanel implements ActionListener{
 	Timer timerFlash = new Timer(timeFlashCount,this);
 	Timer timerPeople = new Timer(timerPeopleCount,this);
 	int totalTime = 500;
-	int toalFlashTime = 500;
+	int toalFlashTime = 600;
 	boolean Start = false;
 	boolean peopleJumpOver = false;
 	int jumpNumber = 0;
@@ -44,13 +44,13 @@ public class PlayWindow extends JPanel implements ActionListener{
 	ImageIcon successfullyIcon = new ImageIcon(Data.successfully);
 	ImageIcon background = new ImageIcon(Data.backgrounfDualPlay);
 	ImageIcon failIcon = new ImageIcon(Data.fail);
-	int xLeft = 25;
+	int xLeft = 130;
 	int yLeft = 274;
 	int xRight = 450;
 	int yRight = 274;
 
 	int xRightTemp = 450;
-	int xLeftTemp = 25;
+	int xLeftTemp = 125;
 
 	int xout = 800;
 	int yout = 274;
@@ -90,7 +90,7 @@ public class PlayWindow extends JPanel implements ActionListener{
 
 	public void SinglePillarSetting(Pillar[] mypillars) {
 		this.pillars= mypillars.clone();
-		xLeftTemp = xLeft = 25; xRightTemp = xRight = xLeft + pillars[0].getD();
+		xLeftTemp = xLeft = 125; xRightTemp = xRight = xLeft + pillars[0].getD();
 		yLeft = WINDOW_HEIGHT - pillars[0].getHeight();
 		yRight = WINDOW_HEIGHT - pillars[1].getHeight();
 		xout = xRight + pillars[1].getD();
@@ -129,7 +129,7 @@ public class PlayWindow extends JPanel implements ActionListener{
 					outImageIsSet = false;
 					leftHeight = rightHeight;
 					leftWidth = rightWidth;
-					xLeft = 30;
+					xLeft = 130;
 					yLeft = yRight;
 					xRight = xout;
 					rightHeight = outHeight;
@@ -303,7 +303,7 @@ public class PlayWindow extends JPanel implements ActionListener{
 	public void setTimeInterval(long timerInterval) {
 		this.timeInterval = timerInterval;
 		double ratio = timeInterval>=1500?1:timeInterval/1500.0;
-		int ymax = 0;
+		int ymax = -35;
 		int xmax = (yLeft-ymax) + xLeft;
 		int Ypoly = (int) (yLeft - ratio*(yLeft-ymax));
 		int Xpoly = (int) (xLeft + ratio*(xmax-xLeft));
@@ -319,7 +319,5 @@ public class PlayWindow extends JPanel implements ActionListener{
 	void setGameOver() {
 		this.gameOver = true;
 		repaint();
-		
 	}
-	
 }
